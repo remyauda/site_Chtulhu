@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style1.css" />
+        <title> Documentation du projet 2 de POO2  </title>
+    </head>
+
+    <body>
+    MACON Arthur, AUDA Rémy, HERRERA Alexandre
+MAM3, Groupe 1
+    
+        <h1>Sommaire</h1>
+        
+		<ol>
+    <li>La hiérarchie des classes</li>
+    <li>La gestion des places</li>
+    <li>Le traitement des erreurs par exceptions Java</li>
+</ol>
+		
+		 <h2>Hiérarchie des classes du projet</h2>
+       
+		Vous trouverez ci-dessous la hiérarchie des classes du projet:
+		<p>
+ 
+    <img src="diagrammeDeClasse.png" alt="Immage du diagramme de classes" title="Diagramme De Classes" />
+</p>
+		
+		
+        Le projet est découpé en quatre packages : pour les classes graphiques, les classes métiers, les classes de test, et pour les classes de gestion des fichiers (fichiers .txt contenus dans le dossier data) respectivement. Ce découpage se justifie par le regroupement dans un package des classes et des interfaces d'une même famille.
+Les méthodes devant être réutilisées par d'autres classes du projet sont déclarées comme public (si elles ne sont réutilisées que par les classes du même package, on les déclare comme package). Les méthodes réutilisées par les classes dérivées sont déclarées comme protected, et les méthodes qui ne servent qu'au sein d'une classe sont déclarées comme private et permettent le découpage du code et sa lisibilité.
+Les classes Concert, PieceDeTheatre et Exposition ayant des attributs en commun, on crée une classe Spectacle dont hériteront ces classes, pour éviter la duplication du code. On ne souhaitera pas instancier de spectacles puisque l'on doit faire des réservations plus spécifiques, donc la classe Spectacle est déclarée comme abstraite.
+On a également une interface Reservable pour les éléments que l'on veut réserver, qu'implémentera la classe Spectacle. On redéfinit les méthodes de la classe Reservable dans la classe Spectacle sans qu'elles ne soient abstraites, ce qui permet de faciliter une réutilisation du code (si nécessité d'extensions au projet), et renforce la lisibilité du code.
+Par rapport à la première version de ce projet, une classe Reservation a également été rajoutée. Cette classe permet la représentation des réservations et l'édition d'un code-barre (méthode placée dans cette classe à part pour la réutilisation du code).
+Les classes CentraleReservation, Concert, Exposition, PieceDeTheatre, Spectacle implémentent l'interface Serializable que l'on importe dans chacune de ces classes. Ceci permet le stockage des données pour la réutilisation des classes.
+
+
+
+ <h2>Gestion des places</h2>
+
+La classe FenetrePlacement définit une fenêtre représentant les places numérotées dans une salle. Dans le constructeur de cette classe, un algorithme permet de numéroter convenablement les places quelque soit le nombre de places en entrée : une lettre correspond à une rangée et une colonne à un nombre.
+Lorsque l'on crée un spectacle, on affecte un nombre de places disponibles à ce spectacle. A chaque réservation, la méthode « assez » de la classe Spectacle renvoie « true » si il reste assez de places pour effectuer la réservation demandée, et « false » sinon. Cette méthode prend en entrée le nombre de places que l'on souhaite réserver, et la clé d'un spectacle. En effet, les spectacles sont stockés dans une HashMap, dont la clé est de type String et permet de représenter un spectacle en en facilitant l'accès. Si « assez » renvoie « true », on procède à la réservation, le nombre de places disponibles pour ce spectacle est alors décrémenté du nombres de places pour cette réservation. On retourne alors une Reservation, avec pour paramètre le nombre de places réservées pour pouvoir éditer le code-barre.
+L'implémentation de Serializable permet de stocker les données des réservations effectuées. Cependant, si l'on souhaite revenir à l'état initial (ce qui revient à réinitialiser la centrale et donc les fichiers .txt contenus dans le dossier « data »), on peut soit exécuter la classe ClasseReinitialisationFile, soit aller dans l'onglet « maintenance technique » de la fenêtre ouverte par l’exécution de la classe Fenêtre pour réinitialiser la centrale avec le mot de passe « admin64 ».
+
+
+<h2>Traitement des erreurs par exceptions Java</h2>
+
+Les erreurs sont gérées par les blocs try/catch. Par exemple, une gestion de l'exception NullPointerException a été ajoutée à la méthode « reserver » de la classe CentraleReservation. Les tests unitaires, positifs, négatifs ou aux bornes permettent de se rendre compte de la nécessité de gérer les exceptions.
+
+    </body>
+</html>
+

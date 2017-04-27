@@ -1,0 +1,128 @@
+@CHARSET "UTF-8";
+
+h1 {
+	display: flex;
+	justify-content: center;
+	color: white;
+}
+
+.recherche {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.dropdown {
+	display: flex;
+	justify-content: flex-start;
+}
+
+#logo {
+	width: 5%;
+	height: 5%;
+}
+
+#photo2 {
+	width: 20%;
+	height: 20;
+	margin: 10px;
+	margin-left: 30px;
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+}
+
+body {
+	background-image: url("cthulhu_under_sea.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+ul {
+	list-style-type: none; /*1*/
+	margin: 0; /*1*/
+	padding: 0; /*1*/
+	overflow: hidden; /*1*/
+	/*width: 1000px;*/
+	/*1: falc: longueur de la barre de navigation(tout l'écran par défaut) */
+	background-color: rgb(51, 51, 51); /*4*/
+	padding-top: 14px; /*7*/
+	padding-bottom: 14px; /*7*/
+	/*position: fixed;/*9*/
+	/*top: 0;/*9*/
+	/* width: 100%;/*9*/
+}
+
+li {
+	display: inline; /*2*/
+}
+
+li a {
+	text-decoration: none; /*3*/
+	color: white; /*4*/
+	padding-top: 14px; /*7*/
+	padding-bottom: 14px; /*7*/
+	padding-left: 14px; /*7*/
+	padding-right: 14px; /*7*/
+	border-right: 1px solid white; /*8*/
+}
+
+li a:HOVER {
+	background-color: rgb(17, 17, 17); /*5*/
+}
+
+.active {
+	background-color: green; /*6*/
+	color: white; /*6*/
+}
+
+/************************************************************************************/
+
+/* Style The Dropdown Button */
+.dropbtn {
+	padding: 16px;
+	font-size: 16px;
+	color: white;
+	background-color: green;
+	border: none;
+	cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	min-width: 100%;
+	background-color: rgb(249, 249, 249);
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	display: block;
+	padding: 12px 16px;
+	text-decoration: none;
+	color: black;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+	background-color: blue;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: rgb(136, 136, 136);
+}

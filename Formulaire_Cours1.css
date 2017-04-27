@@ -1,0 +1,22 @@
+@CHARSET "ISO-8859-1";
+
+select {
+	/*width: 100%;*/
+	height: 50px; padding : 16px 20px;
+	border: none;
+	border-radius: 4px;
+	background-color: #f1f1f1;
+	padding: 16px 20px;
+}
+
+input[type=submit], input[type=reset] {
+	/*width:100%;*/
+	/*height:200px;*/
+	padding: 16px 32px;
+	text-decoration: none;
+	color: white;
+	background-color: green;
+	border: 1px solid black;
+	cursor: pointer;
+	background: linear-gradient(white, blue, white);
+}

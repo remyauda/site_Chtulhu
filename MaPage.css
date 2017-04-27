@@ -1,0 +1,26 @@
+body
+{
+    background-image: url("rien-ne-peut-combattre-le-temps.jpg");
+    background-attachment: fixed; /* Le fond restera fixe */
+background-repeat: no-repeat;
+
+}
+
+h1{
+font-size: 1.5em;
+font-family: Arial,"Times New Roman",serif;
+font-weight: bold;
+}
+
+p
+{
+    color: blue;
+}
+
+.essai
+{
+ display: inline-block;    
+    border: 1px solid blue;
+    vertical-align: top;
+
+}
